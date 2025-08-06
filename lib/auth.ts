@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/db/drizzle"; // your drizzle instance
 import { magicLink } from "better-auth/plugins";
-import { sendLink } from "@/actions/email"
+import { sendMagicLink } from "@/actions/email"
 import { admin } from "better-auth/plugins"
 import { nextCookies } from "better-auth/next-js";
 
@@ -13,7 +13,7 @@ export const auth = betterAuth({
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, token, url }) => {
-        sendLink({ email, token, url })
+        sendMagicLink({ email, token, url })
       }
     }),
     admin(),

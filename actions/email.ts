@@ -7,7 +7,7 @@ import { getDictionary } from '@/actions/dictionaries'
 // Initialize Resend with API key
 const resend = new Resend(process.env.AUTH_RESEND_KEY || '')
 
-export async function sendLink({
+export async function sendMagicLink({
   email,
   token,
   url
@@ -39,13 +39,13 @@ export async function sendLink({
     const dict = await getDictionary(lang)
 
     await resend.emails.send({
-      from: `${process.env.APP_NAME || 'OpenStore'} <noreply@${process.env.APP_DOMAIN || 'restoman.tech'}>`,
+      from: `${process.env.APP_NAME || 'nBeast'} <noreply@${process.env.APP_DOMAIN || 'restoman.tech'}>`,
       to: email,
-      subject: `${dict.email.signInSubject} - ${process.env.APP_NAME || 'OpenStore'}`,
+      subject: `${dict.email.signInSubject} - ${process.env.APP_NAME || 'nBeast'}`,
       react: await EmailTemplate({
         username,
         url,
-        productName: process.env.APP_NAME || 'OpenStore',
+        productName: process.env.APP_NAME || 'nBeast',
         dict
       }),
     })

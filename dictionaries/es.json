@@ -1,0 +1,53 @@
+
+
+{
+   "users": {
+    "welcome": "Bienvenido"
+  },
+  "metadata":{
+    "description": "Descripcion"
+  },
+  "auth": {
+    "account": "Cuenta",
+    "signIn": "Iniciar Sesión",
+    "signInDescription": "Ingresa tu email para iniciar sesión en tu cuenta",
+    "email": "Email",
+    "emailPlaceholder": "m@ejemplo.com",
+    "sendingMagicLink": "Enviando Link Mágico...",
+    "signInWithMagicLink": "Iniciar sesión con Link Mágico",
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "signInWithGithub": "Iniciar sesión con Github",
+    "checkYourEmail": "Revisa tu Email",
+    "magicLinkSent": "Enviamos un link mágico a",
+    "clickLinkToSignIn": "Hace click en el link del email para iniciar sesión.",
+    "checkSpamFolder": "Si no ves el email, fijate en la carpeta de spam",
+    "backToSignIn": "Volver a Iniciar Sesión",
+    "signOut": "Cerrar Sesión"
+  },
+  "email": {
+    "signInPreview": "Tu link de inicio de sesión",
+    "passwordResetPreview": "Restablecer tu contraseña",
+    "signInSubject": "Iniciar sesión",
+    "passwordResetSubject": "Restablecer contraseña",
+    "hello": "Hola",
+    "signInRequest": "Recibimos una solicitud para iniciar sesión en tu cuenta.",
+    "passwordResetRequest": "Recibimos una solicitud para restablecer la contraseña de tu cuenta.",
+    "signInButton": "Iniciar Sesión",
+    "resetPasswordButton": "Restablecer Contraseña",
+    "orCopyLink": "O copia y pega este link en tu navegador:",
+    "linkExpires": "Este link expirará en 15 minutos.",
+    "didntRequest": "Si no solicitaste esto, puedes ignorar este email de forma segura.",
+    "allRightsReserved": "Todos los derechos reservados."
+  },
+  "error": {
+    "invalidEmail": "Dirección de email inválida",
+    "emailRequired": "El email es requerido",
+    "magicLinkError": "Error al enviar el link mágico. Por favor, intenta nuevamente.",
+    "signInError": "Error al iniciar sesión. Por favor, intenta nuevamente.",
+    "passwordResetError": "Error al restablecer la contraseña. Por favor, intenta nuevamente.",
+    "userNotFound": "Usuario no encontrado",
+    "genericError": "Ocurrió un error. Por favor, intenta más tarde.",
+    "ohno": "¡Oh no!",
+    "somethingWentWrong": "Algo salió mal. Por favor, intenta más tarde."
+  }
+}

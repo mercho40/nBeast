@@ -1,0 +1,51 @@
+{
+   "users": {
+    "welcome": "welcome"
+  },
+  "metadata":{
+    "description": "Description"
+  },
+  "auth": {
+    "account": "Account",
+    "signIn": "Sign In",
+    "signInDescription": "Enter your email below to login to your account",
+    "email": "Email",
+    "emailPlaceholder": "m@example.com",
+    "sendingMagicLink": "Sending Magic Link...",
+    "signInWithMagicLink": "Sign-in with Magic Link",
+    "signInWithGoogle": "Sign in with Google",
+    "signInWithGithub": "Sign in with Github",
+    "checkYourEmail": "Check Your Email",
+    "magicLinkSent": "We've sent a magic link to",
+    "clickLinkToSignIn": "Click the link in the email to sign in.",
+    "checkSpamFolder": "If you don't see the email, check your spam folder",
+    "backToSignIn": "Back to Sign In",
+    "signOut": "Sign Out"
+  },
+  "email": {
+    "signInPreview": "Your sign-in link",
+    "passwordResetPreview": "Reset your password",
+    "signInSubject": "Sign in",
+    "passwordResetSubject": "Reset your password",
+    "hello": "Hello",
+    "signInRequest": "We received a request to sign in to your account.",
+    "passwordResetRequest": "We received a request to reset your password for your account.",
+    "signInButton": "Sign In",
+    "resetPasswordButton": "Reset Password",
+    "orCopyLink": "Or copy and paste this link in your browser:",
+    "linkExpires": "This link will expire in 15 minutes.",
+    "didntRequest": "If you didn't request this, you can safely ignore this email.",
+    "allRightsReserved": "All rights reserved."
+  },
+  "error": {
+    "invalidEmail": "Invalid email address",
+    "emailRequired": "Email is required",
+    "magicLinkError": "Error sending magic link. Please try again.",
+    "signInError": "Error signing in. Please try again.",
+    "passwordResetError": "Error resetting password. Please try again.",
+    "userNotFound": "User not found",
+    "genericError": "An error occurred. Please try again later.",
+    "ohno": "Oh no!",
+    "somethingWentWrong": "Something went wrong. Please try again later."
+  }
+}
