@@ -1,10 +1,9 @@
-
-
 {
-   "users": {
+  "users": {
     "welcome": "Bienvenido"
   },
   "metadata":{
+    "title": "nBeast",
     "description": "Descripcion"
   },
   "auth": {
@@ -13,16 +12,22 @@
     "signInDescription": "Ingresa tu email para iniciar sesión en tu cuenta",
     "email": "Email",
     "emailPlaceholder": "m@ejemplo.com",
-    "sendingMagicLink": "Enviando Link Mágico...",
-    "signInWithMagicLink": "Iniciar sesión con Link Mágico",
-    "signInWithGoogle": "Iniciar sesión con Google",
-    "signInWithGithub": "Iniciar sesión con Github",
+    "sendingMagicLink": "Enviando Email...",
+    "signInWithMagicLink": "Iniciar sesión",
+    "signinIn": "Iniciando sesión...",
+    "signInWithGoogle": "Google",
+    "signInWithGithub": "Github",
     "checkYourEmail": "Revisa tu Email",
-    "magicLinkSent": "Enviamos un link mágico a",
+    "magicLinkSent": "Enviamos un email a",
     "clickLinkToSignIn": "Hace click en el link del email para iniciar sesión.",
     "checkSpamFolder": "Si no ves el email, fijate en la carpeta de spam",
     "backToSignIn": "Volver a Iniciar Sesión",
-    "signOut": "Cerrar Sesión"
+    "orContinueWith": "O continua con",
+    "signOut": "Cerrar Sesión",
+    "byContinuingYouAgreeTo": "Al continuar aceptas los",
+    "terms": "Terminos",
+    "and": "y",
+    "conditions": "Condiciones"
   },
   "email": {
     "signInPreview": "Tu link de inicio de sesión",
@@ -42,7 +47,7 @@
   "error": {
     "invalidEmail": "Dirección de email inválida",
     "emailRequired": "El email es requerido",
-    "magicLinkError": "Error al enviar el link mágico. Por favor, intenta nuevamente.",
+    "magicLinkError": "Error al enviar el email. Por favor, intenta nuevamente.",
     "signInError": "Error al iniciar sesión. Por favor, intenta nuevamente.",
     "passwordResetError": "Error al restablecer la contraseña. Por favor, intenta nuevamente.",
     "userNotFound": "Usuario no encontrado",

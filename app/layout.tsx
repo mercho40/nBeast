@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: process.env.APP_NAME || "OpenStore",
+  title: process.env.APP_NAME || "eBeast",
   robots: {
     follow: true,
     index: true
@@ -47,7 +47,7 @@ export default async function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-          storageKey="restoman-theme"
+          storageKey="eBeast-theme"
         >
           {children}
           <Toaster richColors position="top-right" />

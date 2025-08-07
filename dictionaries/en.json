@@ -3,6 +3,7 @@
     "welcome": "welcome"
   },
   "metadata":{
+    "title": "nBeast",
     "description": "Description"
   },
   "auth": {
@@ -11,16 +12,22 @@
     "signInDescription": "Enter your email below to login to your account",
     "email": "Email",
     "emailPlaceholder": "m@example.com",
-    "sendingMagicLink": "Sending Magic Link...",
-    "signInWithMagicLink": "Sign-in with Magic Link",
-    "signInWithGoogle": "Sign in with Google",
-    "signInWithGithub": "Sign in with Github",
+    "sendingMagicLink": "Sending Email...",
+    "signInWithMagicLink": "Sign-in",
+    "signinIn": "Signin in...",
+    "signInWithGoogle": "Google",
+    "signInWithGithub": "Github",
     "checkYourEmail": "Check Your Email",
-    "magicLinkSent": "We've sent a magic link to",
+    "magicLinkSent": "We've sent an email to",
     "clickLinkToSignIn": "Click the link in the email to sign in.",
     "checkSpamFolder": "If you don't see the email, check your spam folder",
     "backToSignIn": "Back to Sign In",
-    "signOut": "Sign Out"
+    "orContinueWith": "Or continue with",
+    "signOut": "Sign Out",
+    "byContinuingYouAgreeTo": "By continuing, you agree to",
+    "terms": "Terms",
+    "and": "and",
+    "conditions": "Conditions"
   },
   "email": {
     "signInPreview": "Your sign-in link",
@@ -40,7 +47,7 @@
   "error": {
     "invalidEmail": "Invalid email address",
     "emailRequired": "Email is required",
-    "magicLinkError": "Error sending magic link. Please try again.",
+    "magicLinkError": "Error sending email. Please try again.",
     "signInError": "Error signing in. Please try again.",
     "passwordResetError": "Error resetting password. Please try again.",
     "userNotFound": "User not found",
