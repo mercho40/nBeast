@@ -1,11 +1,11 @@
 import { Resend } from 'resend'
 import { EmailTemplate } from '@/components/email/signin-template'
 import { auth } from '@/lib/auth'
-import { headers } from 'next/headers'
-import { getDictionary } from '@/actions/dictionaries'
+import { cookies, headers } from 'next/headers'
+import { getDictionary, Lang } from '@/actions/dictionaries'
 
 // Initialize Resend with API key
-const resend = new Resend(process.env.AUTH_RESEND_KEY || '')
+const resend = new Resend(process.env.AUTH_RESEND_KEY)
 
 export async function sendMagicLink({
   email,
@@ -24,16 +24,17 @@ export async function sendMagicLink({
     const username = session?.user?.name || email.split('@')[0]
 
     // Extract language from URL or default to 'en'
-    let lang: 'en' | 'es' = 'en'
+    let lang: Lang = 'en' // Default language
+    const cookieStore = await cookies()
     try {
-      const urlObj = new URL(url)
-      const pathSegments = urlObj.pathname.split('/')
-      if (pathSegments[1] === 'es' || pathSegments[1] === 'en') {
-        lang = pathSegments[1] as 'en' | 'es'
+      const langCookie = cookieStore.get("lang");
+      if (langCookie) {
+        lang = langCookie.value as Lang;
       }
     } catch {
-      // If URL parsing fails, use default language
       lang = 'en'
+    } finally {
+      cookieStore.delete("lang")
     }
 
     const dict = await getDictionary(lang)
