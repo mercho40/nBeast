@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const dynamic = "force-static" // Force static generation for this page
 
 export function generateStaticParams() {
-  return locales
+  return locales.map((lang) => ({ lang }));
 }
 
 export default async function Home({

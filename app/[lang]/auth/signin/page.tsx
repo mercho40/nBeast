@@ -2,7 +2,7 @@ import { getDictionary, Lang, locales } from "@/actions/dictionaries"
 import { SignInForm } from "@/components/signin"
 
 export function generateStaticParams() {
-  return locales
+  return locales.map((lang) => ({ lang }));
 }
 
 export default async function SignIn({

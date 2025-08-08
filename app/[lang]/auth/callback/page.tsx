@@ -2,7 +2,7 @@ import { locales } from "@/actions/dictionaries"
 import { redirect } from "next/navigation"
 
 export function generateStaticParams() {
-  return locales
+    return locales.map((lang) => ({ lang }));
 }
 
 export default async function Callback({
