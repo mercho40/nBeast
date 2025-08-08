@@ -15,7 +15,7 @@ export default async function SignIn({
   const dict = await getDictionary(lang)
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <main className="flex min-h-[100dvh] flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
       <SignInForm dict={dict} lang={lang} />
     </main>
   )

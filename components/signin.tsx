@@ -44,7 +44,7 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
             });
             await signIn.magicLink({ 
                 email, 
-                callbackURL: `/auth/callback?source=signin&redirect=/&provider=email` 
+                callbackURL: `/auth/callback?source=signin&provider=email` 
             });
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : dict.error.genericError;
@@ -61,7 +61,7 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
         try {
           await signIn.social({
             provider,
-            callbackURL: `/auth/callback?source=signin&redirect=/&provider=${provider}`,
+            callbackURL: `/auth/callback?source=signin&provider=${provider}`,
           });
         } catch (error: unknown) {
           console.error("Exception during social sign-in:", error);
