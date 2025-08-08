@@ -4,7 +4,7 @@ import {
   Container,
   Head,
   Heading,
-  Html,
+  Html as EmailHtml, // Renamed to avoid collision with Next.js Html
   Preview,
   Section,
   Text,
@@ -49,7 +49,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     : dict.email.signInPreview;
 
   return (
-    <Html>
+    <EmailHtml> {/* Use renamed component here */}
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
@@ -95,7 +95,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
           </Container>
         </Body>
       </Tailwind>
-    </Html>
+    </EmailHtml>
   );
 };
 

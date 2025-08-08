@@ -1,5 +1,11 @@
-import { getDictionary } from "@/actions/dictionaries"
+import { dictionaries, getDictionary, Lang } from "@/actions/dictionaries"
 import Link from 'next/link'
+
+export const dynamic = "force-static" // Force static generation for this page
+export function generateStaticParams() {
+  const langs = Object.keys(dictionaries) as Array<Lang>
+  return langs.map(lang => ({ lang }))
+}
 
 export default async function Home({
   params,

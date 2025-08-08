@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { signIn } from "@/lib/auth-client"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -19,8 +18,6 @@ type SignInFormProps = {
 export function SignInForm({ dict, lang }: SignInFormProps) {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState<false | "email" | "google" | "github">(false)
-    
-    const router = useRouter()
 
     const handleSignIn = async () => {
         setLoading("email");
@@ -45,7 +42,10 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
             setCookie('lang', lang, {
                 maxAge: 60 * 5, // 5 minutes in seconds
             });
-            await signIn.magicLink({ email });
+            await signIn.magicLink({ 
+                email, 
+                callbackURL: `/auth/callback?source=signin&redirect=/&provider=email` 
+            });
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : dict.error.genericError;
             console.error("Error during sign-in:", errorMessage);
@@ -61,15 +61,13 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
         try {
           await signIn.social({
             provider,
-            callbackURL: "/auth/callback",
+            callbackURL: `/auth/callback?source=signin&redirect=/&provider=${provider}`,
           });
         } catch (error: unknown) {
           console.error("Exception during social sign-in:", error);
           const errorMessage = error instanceof Error ? error.message : dict.error.genericError;
           toast.error(errorMessage);
           setLoading(false);
-        } finally {
-          // router.push("/auth/callback")
         }
     };
 

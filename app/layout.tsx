@@ -6,10 +6,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import { baseUrl } from '@/lib/utils';
 
-export async function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'es' }]
-}
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,8 +23,8 @@ export const metadata: Metadata = {
     follow: true,
     index: true
   }
-
 };
+
 export default async function RootLayout({
   children,
   params,
