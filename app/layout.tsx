@@ -5,6 +5,7 @@ import { Toaster } from "sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { baseUrl } from '@/lib/utils';
+import { Lang } from "@/actions/dictionaries";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,9 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: 'en' | 'es' }>
+  params: Promise<{ lang: Lang }>
 }>) {
-  const { lang } = await params
+  const { lang } = await params;
   return (
     <html lang={lang} >
       <body

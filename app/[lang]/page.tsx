@@ -1,10 +1,10 @@
-import { dictionaries, getDictionary, Lang } from "@/actions/dictionaries"
+import { getDictionary, Lang, locales } from "@/actions/dictionaries"
 import Link from 'next/link'
 
 export const dynamic = "force-static" // Force static generation for this page
+
 export function generateStaticParams() {
-  const langs = Object.keys(dictionaries) as Array<Lang>
-  return langs.map(lang => ({ lang }))
+  return locales
 }
 
 export default async function Home({

@@ -1,9 +1,8 @@
-import { dictionaries, getDictionary, Lang } from "@/actions/dictionaries"
+import { getDictionary, Lang, locales } from "@/actions/dictionaries"
 import { SignInForm } from "@/components/signin"
 
 export function generateStaticParams() {
-  const langs = Object.keys(dictionaries) as Array<Lang>
-  return langs.map(lang => ({ lang }))
+  return locales
 }
 
 export default async function SignIn({

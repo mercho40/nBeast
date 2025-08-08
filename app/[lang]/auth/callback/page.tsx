@@ -1,9 +1,8 @@
-import { dictionaries, Lang } from "@/actions/dictionaries"
+import { locales } from "@/actions/dictionaries"
 import { redirect } from "next/navigation"
 
 export function generateStaticParams() {
-  const langs = Object.keys(dictionaries) as Array<Lang>
-  return langs.map(lang => ({ lang }))
+  return locales
 }
 
 export default async function Callback({
