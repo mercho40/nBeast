@@ -10,7 +10,7 @@ export function generateStaticParams() {
 export default async function Home({
   params,
 }: {
-  params: Promise<{ lang: "en" | "es" }>
+  params: Promise<{ lang: Lang }>
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
