@@ -9,12 +9,15 @@ export function generateStaticParams() {
 export default async function Callback({
     searchParams,
     }: {
-    searchParams?: { [key: string]: string | string[] | undefined }
+    searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
     
+    // Await the search params
+    const resolvedSearchParams = await searchParams || {};
+    
     // Get the redirect path from search params or default to home
-    const redirectTo = typeof searchParams?.redirect === 'string' 
-        ? searchParams.redirect 
+    const redirectTo = typeof resolvedSearchParams.redirect === 'string' 
+        ? resolvedSearchParams.redirect 
         : '/';
     
     // Redirect to the specified path or home
