@@ -11,7 +11,7 @@
     "signIn": "Iniciar Sesión",
     "signInDescription": "Ingresa tu email para iniciar sesión en tu cuenta",
     "email": "Email",
-    "emailPlaceholder": "Email",
+    "emailPlaceholder": "m@ejemplo.com",
     "sendingMagicLink": "Enviando Email...",
     "signInWithMagicLink": "Continuar con Email",
     "signinIn": "Iniciando sesión...",
@@ -21,14 +21,13 @@
     "magicLinkSent": "Enviamos un email a",
     "clickLinkToSignIn": "Hace click en el link del email para iniciar sesión.",
     "checkSpamFolder": "Si no ves el email, fijate en la carpeta de spam",
-    "backToSignIn": "Volver a Iniciar Sesión",
     "orContinueWith": "O continua con",
     "signOut": "Cerrar Sesión",
-    "byContinuingYouAgreeTo": "Al continuar aceptas los",
-    "terms": "Terminos",
-    "and": "y",
-    "conditions": "Condiciones",
-    "logInTo": "Log in to"
+    "byContinuingYouAgreeToOurTermsAndConditions": "Al continuar aceptas nuestros ##Términos## y ##Condiciones##",
+    "logInTo": "Iniciar sesión en",
+    "resendEmail": "Reenviar email",
+    "DidntReciveTheEmailResendInXSeconds": "No recibiste el email? ##Reenviarlo en {{seconds}}s##.",
+    "changeEmail": "Cambiar email"
   },
   "email": {
     "signInPreview": "Tu link de inicio de sesión",

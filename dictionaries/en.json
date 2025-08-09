@@ -11,7 +11,7 @@
     "signIn": "Sign In",
     "signInDescription": "Enter your email below to login to your account",
     "email": "Email",
-    "emailPlaceholder": "Email Address",
+    "emailPlaceholder": "m@example.com",
     "sendingMagicLink": "Sending Email...",
     "signInWithMagicLink": "Continue with Email",
     "signinIn": "Signin in...",
@@ -21,14 +21,13 @@
     "magicLinkSent": "We've sent an email to",
     "clickLinkToSignIn": "Click the link in the email to sign in.",
     "checkSpamFolder": "If you don't see the email, check your spam folder",
-    "backToSignIn": "Back to Sign In",
     "orContinueWith": "Or continue with",
     "signOut": "Sign Out",
-    "byContinuingYouAgreeTo": "By continuing, you agree to",
-    "terms": "Terms",
-    "and": "and",
-    "conditions": "Conditions",
-    "logInTo": "Log in to"
+    "byContinuingYouAgreeToOurTermsAndConditions": "By continuing, you agree to our ##Terms## & ##Conditions##",
+    "logInTo": "Log in to",
+    "resendEmail": "Resend email",
+    "DidntReciveTheEmailResendInXSeconds": "Didn’t receive the email? ##Resend in {{seconds}}s##.",
+    "changeEmail": "Change email"
   },
   "email": {
     "signInPreview": "Your sign-in link",
