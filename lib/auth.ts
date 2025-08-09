@@ -14,7 +14,8 @@ export const auth = betterAuth({
     magicLink({
       sendMagicLink: async ({ email, token, url }) => {
         sendMagicLink({ email, token, url })
-      }
+      },
+      storeToken: "plain"
     }),
     admin(),
     nextCookies()
