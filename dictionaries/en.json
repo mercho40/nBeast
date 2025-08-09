@@ -11,9 +11,9 @@
     "signIn": "Sign In",
     "signInDescription": "Enter your email below to login to your account",
     "email": "Email",
-    "emailPlaceholder": "m@example.com",
+    "emailPlaceholder": "Email Address",
     "sendingMagicLink": "Sending Email...",
-    "signInWithMagicLink": "Sign-in",
+    "signInWithMagicLink": "Continue with Email",
     "signinIn": "Signin in...",
     "signInWithGoogle": "Google",
     "signInWithGithub": "Github",
@@ -27,7 +27,8 @@
     "byContinuingYouAgreeTo": "By continuing, you agree to",
     "terms": "Terms",
     "and": "and",
-    "conditions": "Conditions"
+    "conditions": "Conditions",
+    "logInTo": "Log in to"
   },
   "email": {
     "signInPreview": "Your sign-in link",

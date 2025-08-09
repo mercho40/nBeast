@@ -11,9 +11,9 @@
     "signIn": "Iniciar Sesión",
     "signInDescription": "Ingresa tu email para iniciar sesión en tu cuenta",
     "email": "Email",
-    "emailPlaceholder": "m@ejemplo.com",
+    "emailPlaceholder": "Email",
     "sendingMagicLink": "Enviando Email...",
-    "signInWithMagicLink": "Iniciar sesión",
+    "signInWithMagicLink": "Continuar con Email",
     "signinIn": "Iniciando sesión...",
     "signInWithGoogle": "Google",
     "signInWithGithub": "Github",
@@ -27,7 +27,8 @@
     "byContinuingYouAgreeTo": "Al continuar aceptas los",
     "terms": "Terminos",
     "and": "y",
-    "conditions": "Condiciones"
+    "conditions": "Condiciones",
+    "logInTo": "Log in to"
   },
   "email": {
     "signInPreview": "Tu link de inicio de sesión",
