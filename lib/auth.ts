@@ -40,7 +40,7 @@ export const auth = betterAuth({
     customRules: {
       "/sign-in/magic-link": {
         window: 120,
-        max: 1,
+        max: 2,
       },
     },
   },
