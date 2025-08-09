@@ -36,5 +36,13 @@ export const auth = betterAuth({
       maxAge: 5 * 60, // Cache duration in seconds
     },
   },
+  rateLimit: {
+    customRules: {
+      "/sign-in/magic-link": {
+        window: 120,
+        max: 1,
+      },
+    },
+  },
 });
 

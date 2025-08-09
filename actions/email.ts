@@ -3,9 +3,9 @@ import { EmailTemplate } from '@/components/email/signin-template'
 import { auth } from '@/lib/auth'
 import { cookies, headers } from 'next/headers'
 import { getDictionary, Lang } from '@/actions/dictionaries'
-import { db } from "@/db/drizzle"
-import { eq } from 'drizzle-orm';
-import { verification } from '@/db/schema'
+// import { db } from "@/db/drizzle"
+// import { eq } from 'drizzle-orm';
+// import { verification } from '@/db/schema'
 
 // Initialize Resend with API key
 const resend = new Resend(process.env.AUTH_RESEND_KEY)
@@ -25,22 +25,22 @@ export async function sendMagicLink({
       headers: await headers()
     })
     const value = `{"email":"${email}"}`
-    const emailSent = await db.query.verification.findFirst({
-      where: eq(verification.value, value)
-    });
-    if (!emailSent?.createdAt) {
-      return;
-    }
-    if (emailSent) {
-      const now = new Date();
-      const diff = (now.getTime() - emailSent.createdAt.getTime()) / 1000; // difference in seconds
-      if (diff < 120) { // less than 1 minute
-        return {
-          success: false,
-          error: 'Too many requests. Please wait before trying again.'
-        }
-      }
-    }
+    // const emailSent = await db.query.verification.findFirst({
+    //   where: eq(verification.value, value)
+    // });
+    // if (!emailSent?.createdAt) {
+    //   return;
+    // }
+    // if (emailSent) {
+    //   const now = new Date();
+    //   const diff = (now.getTime() - emailSent.createdAt.getTime()) / 1000; // difference in seconds
+    //   if (diff < 120) { // less than 1 minute
+    //     return {
+    //       success: false,
+    //       error: 'Too many requests. Please wait before trying again.'
+    //     }
+    //   }
+    // }
     const username = session?.user?.name || email.split('@')[0]
 
     // Extract language from URL or default to 'en'
