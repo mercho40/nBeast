@@ -30,12 +30,12 @@ export function BackButton(Props: BackButtonProps) {
     }
     
     return (
-        <div className="absolute top-4 left-4">
+        <div className="fixed top-4 left-4 z-50">
             {as === 'function' ? (
                 <Button
                     variant="outline"
                     size={"sm"}
-                    className={`text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border ${disabled ? "cursor-not-allowed opacity-60 pointer-events-none" : ""}`}
+                    className={`text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border backdrop-blur-sm ${disabled ? "cursor-not-allowed opacity-60 pointer-events-none" : ""}`}
                     onClick={() => {
                         if (!disabled) {
                             onClick?.();
@@ -50,7 +50,7 @@ export function BackButton(Props: BackButtonProps) {
                     <Button
                         variant="outline"
                         size={"sm"}
-                        className={`text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border ${disabled ? "cursor-not-allowed opacity-60 pointer-events-none" : ""}`}
+                        className={`text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border backdrop-blur-sm ${disabled ? "cursor-not-allowed opacity-60 pointer-events-none" : ""}`}
                         onClick={() => {
                             if (!disabled) {
                                 handleBack();
@@ -61,7 +61,7 @@ export function BackButton(Props: BackButtonProps) {
                         <ChevronLeft className="h-4 w-4" />
                     </Button>
                 ) : (
-                    <Link href={href ? href : "#"} className="text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border inline-flex items-center justify-center">
+                    <Link href={href ? href : "#"} className="text-muted-foreground hover:text-foreground aspect-square w-auto h-auto border inline-flex items-center justify-center backdrop-blur-sm">
                         <ChevronLeft className="h-4 w-4" />
                     </Link>
                 )
