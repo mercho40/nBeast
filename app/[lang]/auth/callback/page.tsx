@@ -1,4 +1,5 @@
 import { locales } from "@/actions/dictionaries"
+import { Loader2 } from "lucide-react";
 import { redirect } from "next/navigation"
 
 export function generateStaticParams() {
@@ -25,7 +26,7 @@ export default async function Callback({
     // If you want to show a loading spinner while redirecting, you can return a spinner component
     return (
         <main className="flex min-h-[100dvh] flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-            <div className="animate-spin w-12 h-12 border-4 border-primary border-t-transparent rounded-full"></div>
+            <Loader2 className="animate-spin w-10 h-10"/>
         </main>
     )
 }

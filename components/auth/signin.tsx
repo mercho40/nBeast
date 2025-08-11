@@ -9,8 +9,8 @@ import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
 import { Dictionary, Lang } from "@/actions/dictionaries"
 import { setCookie } from 'cookies-next'
 import { Mail } from "lucide-react"
-import { renderTextWithActions } from "@/components/dicTextWithAction"
-import { BackButton } from "@/components/backButton"
+import { renderTextWithActions } from "@/components/primitives/dicTextWithAction"
+import { BackButton } from "@/components/primitives/backButton"
 
 type SignInFormProps = {
   dict: Dictionary;

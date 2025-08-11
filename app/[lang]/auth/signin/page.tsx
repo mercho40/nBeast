@@ -1,5 +1,5 @@
 import { getDictionary, Lang, locales } from "@/actions/dictionaries"
-import { SignInForm } from "@/components/signin"
+import { SignInForm } from "@/components/auth/signin"
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
