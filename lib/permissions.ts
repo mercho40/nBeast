@@ -1,5 +1,11 @@
 import { createAccessControl } from "better-auth/plugins/access";
- 
+import { permission } from "process";
+
+export type permission = typeof statement[keyof typeof statement][number];
+export type userRole = typeof user.statements[keyof typeof user.statements][number];
+export type adminRole = typeof admin.statements[keyof typeof admin.statements][number];
+export type role = userRole | adminRole
+
 export const statement = {
     user: [
         // Permiso especifico para leer cada aspecto del usuario
