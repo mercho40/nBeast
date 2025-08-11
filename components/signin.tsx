@@ -261,10 +261,10 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
               <div className="text-center text-xs text-muted-foreground space-y-1">
                 <p>{dict.auth.checkSpamFolder}</p>
                 <p>
-                  {dict.auth.didntReciveTheEmail}
+                  {dict.auth.didntReciveTheEmail}{" "}
                   {secondsLeft > 0 ? (
                     <span className="font-semibold text-primary">
-                      {dict.auth.resendIn.replace("{{seconds}}", String(secondsLeft))}{" "}
+                      {dict.auth.resendIn.replace("{{seconds}}", String(secondsLeft))}
                     </span>
                   ) : (
                     <span
