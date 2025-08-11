@@ -26,7 +26,8 @@
     "byContinuingYouAgreeToOurTermsAndConditions": "By continuing, you agree to our ##Terms## & ##Conditions##",
     "logInTo": "Log in to",
     "resendEmail": "Resend email",
-    "DidntReciveTheEmailResendInXSeconds": "Didn’t receive the email? ##Resend in {{seconds}}s##.",
+    "didntReciveTheEmail": "Didn’t receive the email?",
+    "resendIn": "Resend in {{seconds}}s",
     "changeEmail": "Change email"
   },
   "email": {

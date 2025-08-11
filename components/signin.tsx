@@ -256,24 +256,28 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
                 </div>
               )}
               <p className="text-center text-sm text-muted-foreground">
-                  {dict.auth.magicLinkSent} <span className="font-semibold text-white">{email}</span>.
+                  {dict.auth.magicLinkSent} <span className="font-semibold text-white">{email}</span>
               </p>
               <div className="text-center text-xs text-muted-foreground space-y-1">
                 <p>{dict.auth.checkSpamFolder}</p>
-                <div>
-                  {
-                    renderTextWithActions({
-                      text: dict.auth.DidntReciveTheEmailResendInXSeconds.replace("{{seconds}}", String(secondsLeft)),
-                      as: 'function',
-                      onClick: async () => {
-                        if (secondsLeft > 0 || resendLoading) return;
+                <p>
+                  {dict.auth.didntReciveTheEmail}
+                  {secondsLeft > 0 ? (
+                    <span className="font-semibold text-primary">
+                      {dict.auth.resendIn.replace("{{seconds}}", String(secondsLeft))}{" "}
+                    </span>
+                  ) : (
+                    <span
+                      className={`font-semibold ${resendLoading ? "opacity-60 pointer-events-none" : "text-primary hover:underline underline-offset-4"}`}
+                      onClick={async () => {
+                        if (resendLoading) return;
                         await handleResend();
-                      },
-                      disabled: secondsLeft > 0 || resendLoading,
-                      className: `font-semibold ${secondsLeft > 0 || resendLoading ? "" : "text-primary hover:underline underline-offset-4"}`
-                    })
-                  }
-                </div>
+                      }}
+                    >
+                      {dict.auth.resendEmail}
+                    </span>
+                  )}
+                </p>
               </div>
             </div>
           )}
