@@ -24,9 +24,9 @@ export const user = pgTable("user", {
   banned: boolean("banned"),
   banReason: text("ban_reason"),
   banExpires: timestamp("ban_expires"),
-}, (table) => ({
-  emailIdx: index('user_email_idx').on(table.email),
-}));
+}, (table) => ([
+  index('user_email_idx').on(table.email),
+]));
 
 export const session = pgTable("session", {
   id: text("id").primaryKey(),
@@ -40,12 +40,10 @@ export const session = pgTable("session", {
     .notNull()
     .references(() => user.id, { onDelete: "cascade" }),
   impersonatedBy: text("impersonated_by"),
-}, (table) => {
-  return {
-    userIdIdx: index('session_user_id_idx').on(table.userId),
-    tokenIdx: index('session_token_idx').on(table.token),
-  }
-});
+}, (table) => [
+  index('session_user_id_idx').on(table.userId),
+  index('session_token_idx').on(table.token),
+]);
 
 export const account = pgTable("account", {
   id: text("id").primaryKey(),
@@ -63,9 +61,9 @@ export const account = pgTable("account", {
   password: text("password"),
   createdAt: timestamp("created_at").notNull(),
   updatedAt: timestamp("updated_at").notNull(),
-}, (table) => ({
-  userIdIdx: index('account_user_id_idx').on(table.userId),
-}));
+}, (table) => ([
+  index('account_user_id_idx').on(table.userId),
+]));
 
 export const verification = pgTable("verification", {
   id: text("id").primaryKey(),
@@ -78,8 +76,6 @@ export const verification = pgTable("verification", {
   updatedAt: timestamp("updated_at").$defaultFn(
     () => /* @__PURE__ */ new Date(),
   ),
-}, (table) => {
-  return {
-    identifierIdx: index('verification_identifier_idx').on(table.identifier),
-  }
-});
+}, (table) => [
+  index('verification_identifier_idx').on(table.identifier),
+]);
