@@ -3,8 +3,9 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/db/drizzle"; // your drizzle instance
 import { magicLink } from "better-auth/plugins";
 import { sendMagicLink } from "@/actions/email"
-import { admin } from "better-auth/plugins"
+import { admin as adminPlugin } from "better-auth/plugins"
 import { nextCookies } from "better-auth/next-js";
+import { ac, admin, user } from "@/lib/permissions";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
@@ -17,7 +18,13 @@ export const auth = betterAuth({
       },
       storeToken: "plain"
     }),
-    admin(),
+    adminPlugin({
+      ac,
+      roles: {
+        user,
+        admin,
+      }
+    }),
     nextCookies()
   ],
   socialProviders: {

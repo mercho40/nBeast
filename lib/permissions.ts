@@ -40,7 +40,7 @@ export const statement = {
     ],
 } as const;
  
-const ac = createAccessControl(statement);
+export const ac = createAccessControl(statement);
  
 export const user = ac.newRole({
     user: [
