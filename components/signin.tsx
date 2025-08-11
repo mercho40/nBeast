@@ -268,7 +268,7 @@ export function SignInForm({ dict, lang }: SignInFormProps) {
                     </span>
                   ) : (
                     <span
-                      className={`font-semibold ${resendLoading ? "opacity-60 pointer-events-none" : "text-primary hover:underline underline-offset-4"}`}
+                      className={`font-semibold ${resendLoading ? "opacity-60 pointer-events-none" : "text-primary hover:underline underline-offset-4 cursor-pointer"}`}
                       onClick={async () => {
                         if (resendLoading) return;
                         await handleResend();
