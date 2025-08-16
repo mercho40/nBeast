@@ -18,32 +18,45 @@ function negotiateLocale(request: NextRequest): Lang {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Extrae primer segmento para ver si es un locale soportado
+  // Early return for root path
+  if (pathname === "/") {
+    const locale = negotiateLocale(request);
+    const url = request.nextUrl.clone();
+    url.pathname = `/${locale}`;
+    return NextResponse.redirect(url);
+  }
+
+  // Extract first segment to check if it's a supported locale
   const segments = pathname.split("/").filter(Boolean);
   const candidate = segments[0] as Lang | undefined;
   const hasSupportedLocale = !!candidate && (locales as readonly string[]).includes(candidate);
 
   if (hasSupportedLocale) {
-    // Lógica especial para signin con locale ya presente
-    if (
-      pathname === `/${candidate}/auth/signin` ||
-      pathname.startsWith(`/${candidate}/auth/signin?`)
-    ) {
-      const session = await auth.api.getSession({
-        headers: await headers(),
-      });
-      if (session) {
-        const url = request.nextUrl.clone();
-        url.pathname = `/${candidate}/auth/callback`;
-        url.searchParams.set("source", "signin");
-        url.searchParams.set("redirect", "/");
-        return NextResponse.redirect(url);
+    // Special logic for signin with locale already present
+    const isSigninPath = pathname === `/${candidate}/auth/signin` || 
+                        pathname.startsWith(`/${candidate}/auth/signin?`);
+    
+    if (isSigninPath) {
+      try {
+        const session = await auth.api.getSession({
+          headers: await headers(),
+        });
+        if (session) {
+          const url = request.nextUrl.clone();
+          url.pathname = `/${candidate}/auth/callback`;
+          url.searchParams.set("source", "signin");
+          url.searchParams.set("redirect", "/");
+          return NextResponse.redirect(url);
+        }
+      } catch (error) {
+        // If session check fails, continue without redirect
+        console.error("Session check failed in middleware:", error);
       }
     }
     return NextResponse.next();
   }
 
-  // No tiene locale válido → negociar y redirigir
+  // No valid locale → negotiate and redirect
   const locale = negotiateLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname}`.replace(/\/+$/, "") || `/${locale}`;
@@ -52,7 +65,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next|api).*)",
+    "/((?!_next/static|_next/image|favicon.ico|api).*)",
   ],
 };
 

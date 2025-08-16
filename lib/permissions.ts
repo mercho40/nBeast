@@ -1,5 +1,4 @@
 import { createAccessControl } from "better-auth/plugins/access";
-import { permission } from "process";
 
 export type permission = typeof statement[keyof typeof statement][number];
 export type userRole = typeof user.statements[keyof typeof user.statements][number];
